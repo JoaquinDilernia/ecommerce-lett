@@ -1,0 +1,163 @@
+:root{
+    --principal-color: #324b77;
+    --secondary-color: #fff;
+}
+
+.Producto-detail{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: calc(100vh - 250px);
+    background-color: var(--secondary-color);
+}
+
+.Producto-detail-contenedor{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--secondary-color);
+    border-radius: 2rem;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    height: 80%;
+}
+
+.Producto-detail-contenedor-img{
+    width: 30%;
+    height: 80%;
+    border-radius: 2rem;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+}
+
+.Producto-detail-contenedor-img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+}
+
+.Producto-detail-contenedor-caracteristicas{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--secondary-color);
+    border-radius: 2rem;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    color: var(--principal-color);
+}
+
+.Producto-detail-contenedor-caracteristicas h3{
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--principal-color);
+}
+
+.Producto-detail-contenedor-caracteristicas p{
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    color: var(--principal-color);
+}
+.Producto-detail-contenedor-caracteristicas span{
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+    color: var(--principal-color);
+}
+.Producto-detail-contenedor-caracteristicas button{
+    width: 100%;
+    height: 50px;
+    border-radius: 1rem;
+    border: none;
+    background-color: var(--principal-color);
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.Producto-detail-contenedor-caracteristicas button:hover{
+    transform: scale(1.03);
+    transition: all 0.3s ease;
+    -webkit-transform: scale(1.03);
+    -moz-transform: scale(1.03);
+    -ms-transform: scale(1.03);
+    -o-transform: scale(1.03);
+}
+
+details {
+    width: 100%;
+    height: 50%;
+    padding: 1rem;
+
+}
+.detail-p{
+    font-size: 15px !important;
+    color: var(--principal-color);
+    margin-bottom: 1rem;
+}
+
+summary {
+	display: flex;
+	justify-content: space-between;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+    margin-bottom: 1rem;
+	font-size: 15px;
+	color: var(--principal-color);
+	cursor: pointer;
+	background-color: #fff;
+	padding: 10px;
+	border-bottom: .2px solid var(--principal-color);
+}
+
+summary::after {
+	content: "+";
+	font-size: 10px;
+	margin: 10px;
+}
+
+details[open] summary::after {
+	content: "-";
+	font-size: 10px;
+	margin: 10px;
+}
+
+
+@media screen and (max-width: 768px){
+    .Producto-detail{
+        flex-direction: column;
+        height: auto;
+    }
+
+    .Producto-detail-contenedor{
+        flex-direction: column;
+        width: 80%;
+        height: auto;
+    }
+
+    .Producto-detail-contenedor-img{
+        width: 100%;
+        height: 50%;
+        margin-bottom: 1rem;
+    }
+
+    .Producto-detail-contenedor-caracteristicas{
+        width: 100%;
+        height: 50%;
+        padding: 1rem;
+    }
+
+    details{
+        width: 100%;
+        height: 50%;
+        padding: 1rem;
+    }
+}
+
+
