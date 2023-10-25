@@ -21,7 +21,7 @@ const NavBar = (props) => {
     <IconContext.Provider value={{ color: "#324b77" }}>
         <nav className="navbar">
             <div className="navbar-container container">
-                <Link to={`/Home/${idcliente}`} className="logo" onClick={closeMobileMenu}>
+                <Link to={`/Home/${idcliente}/0`} className="logo" onClick={closeMobileMenu}>
                     <img  src={logo} alt="loco" />
                 </Link>
                 <div className="menu-icon" onClick={handleClick}>
@@ -30,7 +30,7 @@ const NavBar = (props) => {
                 <ul className={click ? "nav-menu active" : "nav-menu"}>
                     <li className="nav-item">
                         <NavLink
-                            to={`/Categoria/1`}
+                            to={`/Home/${idcliente}/1`}
                             className={({ isActive }) =>
                                 "nav-links" + (isActive ? " activated" : "")
                             }
@@ -41,7 +41,7 @@ const NavBar = (props) => {
                     </li>
                     <li className="nav-item">
                         <NavLink
-                            to={`/Categoria/2`}
+                            to={`/Home/${idcliente}/2`}
                             className={({ isActive }) =>
                                 "nav-links" + (isActive ? " activated" : "")
                             }
@@ -52,7 +52,7 @@ const NavBar = (props) => {
                     </li>
                     <li className="nav-item">
                         <NavLink
-                            to={`/Categoria/3`}
+                            to={`/Home/${idcliente}/3`}
                             className={({ isActive }) =>
                                 "nav-links" + (isActive ? " activated" : "")
                             }
@@ -63,7 +63,7 @@ const NavBar = (props) => {
                     </li>
                     <li className="nav-item">
                         <NavLink
-                            to={`/Categoria/4`}
+                            to={`/Home/${idcliente}/4`}
                             className={({ isActive }) =>
                                 "nav-links" + (isActive ? " activated" : "")
                             }
@@ -75,7 +75,7 @@ const NavBar = (props) => {
 
                     <li className="nav-item">
                         <NavLink
-                            to={`/Categoria/5`}
+                            to={`/Home/${idcliente}/5`}
                             className={({ isActive }) =>
                                 "nav-links" + (isActive ? " activated" : "")
                             }
@@ -87,7 +87,7 @@ const NavBar = (props) => {
 
                     <li className="nav-item ">
                         <NavLink 
-                            to={`/Categoria/6`}
+                            to={`/Home/${idcliente}/6`}
                             className={({ isActive }) =>
                                 "nav-links promo" + (isActive ? " activated-promo" : "")
                             }

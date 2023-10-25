@@ -40,9 +40,9 @@
 .Producto-detail-contenedor-caracteristicas{
     display: flex;
     flex-direction: column;
-    width: 30%;
+    width: 40%;
     height: auto;
-    align-items: center;
+    align-items: start;
     justify-content: center;
     background-color: var(--secondary-color);
     border-radius: 2rem;

@@ -84,10 +84,19 @@
     outline: none;
 }
 
+.login-contenedor__formulario__boton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
 .login-contenedor__formulario__boton button{
     width: 100%;
     height: 2rem;
     border: none;
+    margin: 15px;
     border-radius: 5px;
     background-color: var(--principal-color);
     color: var(--secondary-color);
@@ -106,3 +115,25 @@
     -o-transform: scale(1.03);
 }
 
+.btn-invitado{
+    width: 50%;
+    height: 2rem;
+    border: none;
+    margin: 15px;
+    border-radius: 5px;
+    background-color: var(--principal-color);
+    color: var(--secondary-color);
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    outline: none; 
+}
+
+.btn-invitado:hover{
+    transform: scale(1.03);
+    transition: all 0.3s ease;
+    -webkit-transform: scale(1.03);
+    -moz-transform: scale(1.03);
+    -ms-transform: scale(1.03);
+    -o-transform: scale(1.03);
+}

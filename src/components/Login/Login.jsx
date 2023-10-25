@@ -29,7 +29,7 @@ const Login = () => {
         if (cliente) {
             if (cliente.cuit === password) {
                 alert('Bienvenido')
-                window.location.href = `/Home/${cliente.id}`
+                window.location.href = `/Home/${cliente.id}/0`
             } else {
                 alert('Contraseña incorrecta')
             }
@@ -37,6 +37,11 @@ const Login = () => {
             alert('Usuario no registrado')
         }
     }
+
+const invitado = () => {
+    alert('Bienvenido invitado')
+    window.location.href = `/Home/0/0`
+}
 
 
 
@@ -64,8 +69,10 @@ const Login = () => {
                 </div>
                 <div className='login-contenedor__formulario__boton'>
                     <button type='submit'>Ingresar</button>
+                  
                 </div>
             </form>
+            <button className='btn-invitado' type='submit' onClick={invitado}>Ingresar como invitado</button>
 
 
 

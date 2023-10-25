@@ -35,17 +35,15 @@ const ProductoDetail = () => {
                 <div className='Producto-detail-contenedor-caracteristicas'>
                 <h3>{product.nombre}</h3>
                 <p>${product.comercio}</p>
-                    <span> UxB: {product.uxb}</span>
-                    <span> UxV: {product.uxv}</span>
-                    <details className='Producto-details'>  
-                    <summary>Descripcion y Medidas</summary>
                     <p className='detail-p'> {product.descripcion}</p>
+                    <p className='detail-p'> UxB: {product.uxb}</p>
+                    <p className='detail-p'>  UxV: {product.uxv}</p>
                     <p className='detail-p'> Peso KG: {product.peso}</p>
                     <p className='detail-p'> Alto CM: {product.alto}</p>
                     <p className='detail-p'> Ancho CM: {product.ancho}</p>
                     <p className='detail-p'> Profundidad CM: {product.profundidad}</p>
                     <p className='detail-p'> Diametro CM: {product.diametro}</p>
-                </details>
+
                 </div>
  
             </div>
