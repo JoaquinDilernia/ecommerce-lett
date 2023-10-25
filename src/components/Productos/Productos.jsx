@@ -82,7 +82,7 @@ const Productos = (props) => {
     
     <div className='home-contenedor__productos'>
    
-      {filteredProducts.filter(product => product.estado === 1 && parseInt(params.idcategoria) === 0).map((product) => (
+      {filteredProducts.filter(product => product.estado === 1 && product.categoria === parseInt(params.idcategoria) ).map((product) => (
         <Link className='link' to={`/Productos/${params.idcliente}/${product.id}`} >
         { product.oferta === 1 ? <div className='contenedor-oferta'> <p className='oferta'>CONSULTAR DESCUENTO</p>  </div>:  <div className='contenedor-oferta'><p className='sin-oferta'>-----------</p></div>}
 
