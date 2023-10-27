@@ -94,7 +94,6 @@ const Productos = (props) => {
 
         <div className='home-contenedor__productos__item' key={product.id}>
           <Link to={`/Productos/${idcliente}/${product.id}`}>
-        { product.oferta === 1 ? <div className='contenedor-oferta'> <p className='oferta'>CONSULTAR DESCUENTO</p>  </div>:  <div className='contenedor-oferta'><p className='sin-oferta'>-----------</p></div>}
 
           <div className='home-contenedor__productos__item__img'>
           <img src={product.image} alt={product.name} />
@@ -114,9 +113,9 @@ const Productos = (props) => {
           <div>
           </div>
           </Link>
-          <div className='home-contenedor__productos__item__footer__btn'>
-          <ItemCount onAdd={onAdd} id={product.id} />
-          </div>
+          {idcliente === '0' ? <p></p> : <ItemCount onAdd={onAdd} id={product.id} />
+         
+          }
         </div>
         
         

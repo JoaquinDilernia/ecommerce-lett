@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import logo from '../../assets/logo.png'
 
 
 import './Login.css'
@@ -28,7 +29,6 @@ const Login = () => {
         const cliente = clientes.find(cliente => cliente.usuarios === usuario)
         if (cliente) {
             if (cliente.cuit === password) {
-                alert('Bienvenido')
                 window.location.href = `/Home/${cliente.id}/0`
             } else {
                 alert('Contraseña incorrecta')
@@ -39,7 +39,6 @@ const Login = () => {
     }
 
 const invitado = () => {
-    alert('Bienvenido invitado')
     window.location.href = `/Home/0/0`
 }
 
@@ -51,6 +50,10 @@ const invitado = () => {
 
   return (
     <div className='login'>
+        <div className='login__logo'>
+            <img src={logo} alt='logo' />
+        </div>
+
     <div className='login-contenedor'>
         <div className='login-contenedor__titulo'>
             <h1>LOGIN</h1>

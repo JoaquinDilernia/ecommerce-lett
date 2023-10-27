@@ -11,7 +11,11 @@
     height: 100vh;
     background-color: var(--secondary-color);
 }
-
+.login__logo{
+    width: 300px;
+    height: auto;
+    margin-bottom: 2rem;
+}
 .login-contenedor{
     display: flex;
     flex-direction: column;
@@ -136,4 +140,10 @@
     -moz-transform: scale(1.03);
     -ms-transform: scale(1.03);
     -o-transform: scale(1.03);
+}
+
+@media screen and (max-width: 768px){
+    .login-contenedor{
+        width: 80%;
+    }
 }

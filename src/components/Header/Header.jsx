@@ -3,11 +3,16 @@ import React, { useState, useEffect } from 'react'
 import './Header.css'
 import { Link } from 'react-router-dom'
 import CartWidget from '../CartWidget/CartWidget'
+import useModal from '../hooks/useModal'
+import Cart from '../Cart/Cart'
+
+import { Button } from '@chakra-ui/react'
 
 
 
 const Header = (props) => {
 
+    const [isOpenModal, openModal, closeModal] = useModal()
     const url = 'https://apimocha.com/lettproduct/clientes'
     const [clientes, setClientes] = useState([])
 
@@ -19,26 +24,33 @@ const Header = (props) => {
     }
         , [])
 
-
-
+        const vendedor = clientes.filter(cliente => cliente.id === parseInt(props.id)).map((cliente) => (
+            cliente.vendedor
+        ))
+        const usuario = clientes.filter(cliente => cliente.id === parseInt(props.id)).map((cliente) => (
+            cliente.usuarios
+        ))
 
   return (
 
-
 <div className='header'>
     <div className='contenedor-usuario'>
-        <p>{
-            clientes.filter(cliente => cliente.id === parseInt(props.id)).map((cliente) => (
-                cliente.usuarios
-            ))
-        }</p>
+        <p>{usuario }</p>
 
-        <Link className='cerrar-sesion' to='/'>Cerrar Sesión</Link>
+{
+    props.id === '0' ? <Link className='cerrar-sesion' to='/'>Iniciar Sesión</Link> : <Link className='cerrar-sesion' to='/'>Cerrar Sesión</Link>
+}
+        
 
     </div>
 
     <div className='conteendor-carrito'>
-        <Link to='/carrito'><CartWidget /></Link>
+        <Button onClick={openModal}><CartWidget /></Button>
+        <Cart  isOpen={isOpenModal} closeModal={closeModal}/>
+
+
+
+        
     </div>
 
 

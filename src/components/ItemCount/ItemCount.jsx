@@ -8,6 +8,8 @@ import {
 } from "@chakra-ui/react";
 import { AddIcon, MinusIcon } from "@chakra-ui/icons";
 
+import "./ItemCount.css";
+
 const ItemCount = ({ onAdd, id }) => {
   const [quanti, setQuanti] = useState(1);
 
@@ -32,8 +34,7 @@ const ItemCount = ({ onAdd, id }) => {
         <Center>
           <Button
             onClick={() => onAdd(quanti, id)}
-            variant="solid"
-            colorScheme="blue"
+            className="btn_agregar"
           >
             Agregar al Carrito: {quanti}
           </Button>

@@ -3,13 +3,15 @@ import { BsCartCheck } from 'react-icons/bs'
 import { useContext } from "react";
 import { CartContext } from "../../context/ShoppingCartContext";
 
+import './CartWidget.css'
+
 const CartWidget = ({}) => {
   const { cartQty } = useContext(CartContext);
   return (
     <>  
         <Flex>
-            <BsCartCheck size="1.5em" color="black" />
-            <p>{cartQty}</p>
+            <BsCartCheck size="1.5em" color="#324b77" />
+            <p className="cart-cant">{cartQty}</p>
         </Flex>     
 
     </>

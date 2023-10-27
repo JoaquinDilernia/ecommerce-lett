@@ -1,34 +1,27 @@
-import { Link } from "react-router-dom";
-import Checkout from "./Checkout";
-import { useContext } from "react";
-import { CartContext } from "../../context/ShoppingCartContext";
-import {
-  Button,
-} from "@chakra-ui/react";
-import Brief from "./Brief";
+import React from 'react'
+import Brief from '../Brief/Brief'
+import './Cart.css'
 
-const Cart = () => {
-  const { cart } = useContext(CartContext);
 
-  if (cart.length === 0) {
-    return (
-      <>
-        <div className="cart_">
-          <h2>El carrito esta vacio..</h2>
-          <Link to={"/catalogue"}>
-            <Button colorScheme="red">Ir al catálogo</Button>
-          </Link>
-        </div>
-      </>
-    );
+const Cart = ({isOpen, closeModal }) => {
+
+  const handleModalClick = (e) => {
+    e.stopPropagation()
   }
   return (
-    <div className="main_cart">
-      {console.log(cart)}
-     <Brief/>
-     <Checkout/>
-    </div>
-  );
-};
+    <div className={`modal ${isOpen && 'modal-open' }`} onClick={closeModal}>
+      <div className='modal-full' onClick={handleModalClick}>
+        <div className='close-modal'>
+          <button className='btn-cerrar' onClick={closeModal}>X</button>
+        </div>
+     <Brief />
 
-export default Cart;
+     <div className='footer-modal'>
+     <button className='btn-cerrar' onClick={closeModal}> Ver Carrito</button>
+     </div>
+    </div>
+    </div>
+  )
+}
+
+export default Cart

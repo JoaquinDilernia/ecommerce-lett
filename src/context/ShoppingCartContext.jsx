@@ -7,7 +7,19 @@ export const ShoppingCartProvider = ({ children }) => {
 
     const [cart, setCart] = useState([]);
     const [cartQty, setCartQty] = useState(0);
-    const [cartTotal, setCartTotal] = useState(0);
+    const [totalAmount, setTotalAmount] = useState(0);
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        fetch("https://apimocha.com/lettproduct/products")
+          .then((response) => response.json())
+          .then((json) => setProducts(json));
+      }, []);
+
+      
+
+
+      
     
     const cleanCart = () => {
         setCartQty(0);

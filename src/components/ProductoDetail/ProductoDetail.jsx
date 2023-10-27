@@ -4,6 +4,10 @@ import { useState, useEffect } from 'react'
 import './ProductoDetail.css'
 import NavBar from '../NavBar/NavBar'
 import Header from '../Header/Header'
+import ItemCount from '../ItemCount/ItemCount'
+import { useContext } from 'react'
+import { CartContext } from '../../context/ShoppingCartContext'
+
 
 
 const ProductoDetail = () => {
@@ -19,7 +23,12 @@ const ProductoDetail = () => {
         , [])
 
     const params = useParams()
+    const { addItem } = useContext(CartContext)
 
+    const onAdd = (cantidad, id) => {
+      addItem(cantidad, id)
+    }
+  
 
   return (
     <>
@@ -30,8 +39,12 @@ const ProductoDetail = () => {
             <div className='Producto-detail-contenedor' key={product.id}>
                 <div className='Producto-detail-contenedor-img'>
                     <img src={product.image} alt={product.nombre} />
+                    { params.idcliente === '0' ? <p className='detail-p'></p> : <div className='Producto-detail-contenedor-boton'>
+                    <ItemCount onAdd={onAdd} id={product.id} />
+                </div>}
+
                 </div>
-                
+
                 <div className='Producto-detail-contenedor-caracteristicas'>
                 <h3>{product.nombre}</h3>
                 <p>${product.comercio}</p>
@@ -44,7 +57,12 @@ const ProductoDetail = () => {
                     <p className='detail-p'> Profundidad CM: {product.profundidad}</p>
                     <p className='detail-p'> Diametro CM: {product.diametro}</p>
 
+
+
+                   
+
                 </div>
+
  
             </div>
 

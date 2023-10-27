@@ -1,0 +1,13 @@
+:root{
+    --principal-color: #324b77;
+    --secondary-color: #fff;
+}
+
+.cart-cant{
+    font-size: 20px;
+    color: var(--principal-color);
+    margin-left: 10px;
+    margin-right: 10px;
+    
+
+}

@@ -1,0 +1,9 @@
+:root {
+    --principal-color: #324b77;
+    --secondary-color: #fff;
+  }
+
+.btn_agregar{
+background-color: var(--principal-color) !important;
+color: var(--secondary-color) !important;
+}
