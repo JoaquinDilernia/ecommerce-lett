@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
+import ItemCount from '../ItemCount/ItemCount'
+import { CartContext } from '../../context/ShoppingCartContext'
 import './Productos.css'
 
 
@@ -14,7 +16,13 @@ const Productos = (props) => {
   const [filteredProducts, setFilteredProducts] = useState([])
   const [error, setError] = useState(false)
 
+  const { addItem } = useContext(CartContext)
 
+  const onAdd = (cantidad, id) => {
+    addItem(cantidad, id)
+  }
+
+  
   const idcliente = props.id
 
 
@@ -83,10 +91,11 @@ const Productos = (props) => {
     <div className='home-contenedor__productos'>
    
       {filteredProducts.filter(product => product.estado === 1 && product.categoria === parseInt(params.idcategoria) ).map((product) => (
-        <Link className='link' to={`/Productos/${params.idcliente}/${product.id}`} >
-        { product.oferta === 1 ? <div className='contenedor-oferta'> <p className='oferta'>CONSULTAR DESCUENTO</p>  </div>:  <div className='contenedor-oferta'><p className='sin-oferta'>-----------</p></div>}
 
         <div className='home-contenedor__productos__item' key={product.id}>
+          <Link to={`/Productos/${idcliente}/${product.id}`}>
+        { product.oferta === 1 ? <div className='contenedor-oferta'> <p className='oferta'>CONSULTAR DESCUENTO</p>  </div>:  <div className='contenedor-oferta'><p className='sin-oferta'>-----------</p></div>}
+
           <div className='home-contenedor__productos__item__img'>
           <img src={product.image} alt={product.name} />
           </div>
@@ -102,8 +111,15 @@ const Productos = (props) => {
           <p> UxB: {product.uxb}</p>
           <p> UxV: {product.uxv}</p>
           </div>
+          <div>
+          </div>
+          </Link>
+          <div className='home-contenedor__productos__item__footer__btn'>
+          <ItemCount onAdd={onAdd} id={product.id} />
+          </div>
         </div>
-        </Link>
+        
+        
       ))}
     </div>
     {error && <p className='error'>Producto no encontrado</p>}

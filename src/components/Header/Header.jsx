@@ -1,8 +1,9 @@
 
 import React, { useState, useEffect } from 'react'
 import './Header.css'
-import { BsCartCheck } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
+import CartWidget from '../CartWidget/CartWidget'
+
 
 
 const Header = (props) => {
@@ -37,7 +38,7 @@ const Header = (props) => {
     </div>
 
     <div className='conteendor-carrito'>
-        <Link to='/carrito'><BsCartCheck /></Link>
+        <Link to='/carrito'><CartWidget /></Link>
     </div>
 
 
