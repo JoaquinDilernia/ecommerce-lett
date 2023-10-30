@@ -93,13 +93,17 @@ const Productos = (props) => {
       {filteredProducts.filter(product => product.estado === 1 && product.categoria === parseInt(params.idcategoria) ).map((product) => (
 
         <div className='home-contenedor__productos__item' key={product.id}>
+        <div className='home-contenedor__productos__item__header'>
+          {product.oferta === 1 ? <p className='oferta'>Consultar oferta</p> : null}
+          </div>
+          
           <Link to={`/Productos/${idcliente}/${product.id}`}>
 
           <div className='home-contenedor__productos__item__img'>
           <img src={product.image} alt={product.name} />
           </div>
           <h3>{product.nombre}</h3>
-          {  tipocliente() === 0 ? <p></p> : null}
+          {  tipocliente() === 0 ? <p></p> : null  }
           {  tipocliente() === 1 ? <p>${product.comercio}</p> : null}
           {  tipocliente() === 2 ? <p>${product.walmart}</p> : null}
           {  tipocliente() === 3 ? <p>${product.grandes}</p> : null}

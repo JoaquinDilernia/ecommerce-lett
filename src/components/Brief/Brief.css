@@ -70,22 +70,14 @@
 
 .total {
   display: flex;
-  justify-content: space-around;
+  justify-content: start;
   align-items: center;
 }
 
-.link-vercarrito1 {
-    text-decoration: none;
-    text-align: center;
-    cursor: pointer;
-    color: var(--principal-color);
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    background-color: var(--secondary-color);
-    border: 1px solid var(--principal-color);
-    transition: all 0.2s ease-in-out;
-    }
+.total p {
+  font-size: 20px;
+  padding: 10px;
+}
 
 
 @media screen and (max-width: 768px) {

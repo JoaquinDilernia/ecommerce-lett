@@ -20,6 +20,7 @@ const NavBar = (props) => {
     <>
     <IconContext.Provider value={{ color: "#324b77" }}>
         <nav className="navbar">
+
             <div className="navbar-container container">
                 <Link to={`/Home/${idcliente}/0`} className="logo" onClick={closeMobileMenu}>
                     <img  src={logo} alt="loco" />

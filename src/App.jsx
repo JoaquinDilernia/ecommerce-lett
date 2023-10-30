@@ -4,6 +4,7 @@ import Home from './components/Home/Home'
 import Error404 from './components/Error404/Error404'
 import Login from './components/Login/Login'
 import Checkout from './components/Checkout/Checkout'
+import Wpp from './components/Wpp/Wpp'
 import Cart from './components/Cart/Cart'
 import { ShoppingCartProvider } from './context/ShoppingCartContext'
 import { ChakraProvider } from "@chakra-ui/react"
@@ -29,6 +30,7 @@ function App() {
 
           <Route path='*' element={<Error404 />} />
         </Routes>
+        <Wpp />
       </ShoppingCartProvider>
         </ChakraProvider>
 

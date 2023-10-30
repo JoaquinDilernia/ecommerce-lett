@@ -5,6 +5,7 @@ import './Home.css'
 import Header from '../Header/Header'
 import NavBar from '../NavBar/NavBar'
 import Productos from '../Productos/Productos'
+import { ShoppingCartProvider } from '../../context/ShoppingCartContext'
 
 
 
@@ -14,9 +15,11 @@ const Home = () => {
 
   return (
     <>
+    <ShoppingCartProvider id={params.idcliente}>
     <Header id={params.idcliente} />
     <NavBar id={params.idcliente}/>
     <Productos id={params.idcliente}/>
+    </ShoppingCartProvider>
     
       </>
   )

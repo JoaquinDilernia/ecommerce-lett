@@ -2,7 +2,6 @@ import { useContext } from "react";
 import { CartContext } from "../../context/ShoppingCartContext";
 import { BsTrash3 } from 'react-icons/bs';
 import { useState, useEffect } from "react";
-
 import "./Brief.css";
 import { Link, useParams } from "react-router-dom";
 
@@ -52,9 +51,7 @@ const Brief = () => {
           {  tipocliente() === 3 ? <p>${product.grandes}</p> : null}
           {  tipocliente() === 4 ? <p>${product.morph}</p> : null}
           {  tipocliente() === 5 ? <p>${product.prestigio}</p> : null}
-              <p className="cantidad"> x {product.quantity} </p>
-              <p className="subtotal"> = ${product.comercio}</p>
-             
+              <p className="cantidad"> x {product.quantity} </p>             
           {  tipocliente() === 1 ? <p>${product.comercio * product.quantity}</p> : null}
           {  tipocliente() === 2 ? <p>${product.walmart * product.quantity}</p> : null}
           {  tipocliente() === 3 ? <p>${product.grandes * product.quantity}</p> : null}
@@ -73,11 +70,10 @@ const Brief = () => {
       <div className="contenedor-total">
         <div className="total">
           <p className="titulo">Total:</p>
-          <p className="monto">$ {totalAmount}</p>
+
+          <p className="monto">{parseInt(totalAmount)}</p>
         </div>
-        <div className="link-vercarrito1">
-          <Link to={`/Checkout/${params.idcliente} `}> Ver Carrito</Link> 
-        </div>
+      
       </div>
     </div>
     </>

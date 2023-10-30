@@ -119,13 +119,21 @@ padding: 2rem;
     font-size: 1.5rem;
     margin-bottom: 1rem;
 }
-.contenedor-oferta{
+.home-contenedor__productos__item__header{
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    background-color: red;
     width: 100%;
+    height: auto;
 }
 
+.oferta{
+    color: var(--secondary-color)!important;
+    font-size: 1.2rem;
+    margin: 0 !important;
+
+}
 @media screen and (min-width:999px) and (max-width:1250px){
     .home-contenedor__productos{
         grid-template-columns: repeat(3, 1fr);
