@@ -53,11 +53,19 @@ const handleCheckout = (e) => {
   const apellido = e.target.apellido.value
   const telefono = e.target.telefono.value
   const observacion = e.target.observacion.value
+  const estado = 'pendiente'
   const idcliente = params.idcliente
+  const fecha = new Date()
+  const dia = fecha.getDate()
+  const mes = fecha.getMonth() + 1
+  const año = fecha.getFullYear()
+  const fechaActual = `${dia}/${mes}/${año}`
 
 
 
-  const order = { nombre, cart, totalAmount, apellido, telefono, observacion, idcliente }
+
+
+  const order = { nombre, cart, totalAmount, apellido, telefono, observacion, idcliente , fechaActual, estado}
 
 
   console.log(order)

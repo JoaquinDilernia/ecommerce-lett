@@ -33,7 +33,7 @@ const ProductoDetail = () => {
   return (
     <>
     <Header id={params.idcliente}/>
-    <NavBar />
+    <NavBar id={params.idcliente}/>
     <div className='Producto-detail' >{
         products.filter(product => product.id === parseInt(params.idproducto)).map((product) => (
             <div className='Producto-detail-contenedor' key={product.id}>
