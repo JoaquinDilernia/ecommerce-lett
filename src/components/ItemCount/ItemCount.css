@@ -1,9 +1,11 @@
-:root {
-    --principal-color: #324b77;
-    --secondary-color: #fff;
-  }
+.btn_agregar {
+  font-size: 1rem !important;
+  background-color: var(--principal-color) !important;
+  color: var(--secondary-color) !important;
+}
 
-.btn_agregar{
-background-color: var(--principal-color) !important;
-color: var(--secondary-color) !important;
+@media screen and (max-width: 768px) {
+  .btn_agregar {
+    font-size: 0.6rem !important;
+  }
 }

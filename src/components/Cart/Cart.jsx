@@ -1,35 +1,31 @@
-import React from 'react'
-import Brief from '../Brief/Brief'
+import React from "react";
+import Brief from "../Brief/Brief";
 import { Link, useParams } from "react-router-dom";
-import { useContext } from "react";
-import './Cart.css'
+import { motion } from "framer-motion";
 
+import "./Cart.css";
 
-
-
-const Cart = ({isOpen, closeModal }) => {
-
-  const params = useParams()
-
+const Cart = ({ isOpen, closeModal }) => {
+  const params = useParams();
 
   const handleModalClick = (e) => {
-    e.stopPropagation()
-  }
+    e.stopPropagation();
+  };
   return (
-    <div className={`modal ${isOpen && 'modal-open' }`} onClick={closeModal}>
-      <div className='modal-full' onClick={handleModalClick}>
-        <div className='close-modal'>
-          <button className='btn-cerrar' onClick={closeModal}>X</button>
+    <div className={`modal ${isOpen && "modal-open"}`} onClick={closeModal}>
+      <div className="modal-full" onClick={handleModalClick}>
+        <div className="close-modal">
+          <button className="btn-cerrar" onClick={closeModal}>
+            X
+          </button>
         </div>
         <div className="link-vercarrito1">
-          <Link to={`/Checkout/${params.idcliente} `}> Finalizar compra</Link> 
+          <Link to={`/Checkout/${params.idcliente} `}> Finalizar compra</Link>
         </div>
-     <Brief />
-
-
+        <Brief />
+      </div>
     </div>
-    </div>
-  )
-}
+  );
+};
 
-export default Cart
+export default Cart;

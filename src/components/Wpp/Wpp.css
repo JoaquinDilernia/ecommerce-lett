@@ -1,60 +1,60 @@
-:root {
-    --principal-color: #324b77;
-    --secondary-color: #fff;
-  }
-
-.btn-wpp{
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    z-index: 1000;
-    width: 60px;
-    height: 60px;
-    background-color: var(--principal-color);
-    animation: floatIcono 4s ease-in-out infinite;
-    color: var(--secondary-color);
-    border-radius: 50%;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    font-size: 30px;
-    box-shadow: 2px 2px 3px #999;
-    transition: all 0.3s;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -ms-transition: all 0.3s;
-    -o-transition: all 0.3s;
-    -webkit-animation: floatIcono 4s ease-in-out infinite;
+.btn-wpp {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000;
+  width: 60px;
+  height: 60px;
+  background-color: var(--principal-color);
+  animation: floatIcono 4s ease-in-out infinite;
+  color: var(--secondary-color);
+  border-radius: 50%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 3px #999;
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -webkit-animation: floatIcono 4s ease-in-out infinite;
 }
 
-.btn-wpp:hover{
-    background-color: var(--secondary-color);
-    color: var(--principal-color);
-    box-shadow: 2px 2px 3px var(--principal-color);
-    transition: all 0.5s;
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -ms-transition: all 0.5s;
-    -o-transition: all 0.5s;
+.btn-wpp:hover {
+  background-color: var(--secondary-color);
+  color: var(--principal-color);
+  box-shadow: 2px 2px 3px var(--principal-color);
+  border: 1px solid var(--principal-color);
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
 }
 
-.ChatIcon{
-    margin-top: 12px;
+.icon-wpp {
+    font-size: 40px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+
 }
 @keyframes floatIcono {
-    0% {
-        transform: translateY(0);
-    }
+  0% {
+    transform: translateY(0);
+  }
 
-    50% {
-        transform: translateY(-1rem);
-        -webkit-transform: translateY(-1rem);
-        -moz-transform: translateY(-1rem);
-        -ms-transform: translateY(-1rem);
-        -o-transform: translateY(-1rem);
-}
+  50% {
+    transform: translateY(-1rem);
+    -webkit-transform: translateY(-1rem);
+    -moz-transform: translateY(-1rem);
+    -ms-transform: translateY(-1rem);
+    -o-transform: translateY(-1rem);
+  }
 
-    100% {
-        transform: translateY(0);
-    }
+  100% {
+    transform: translateY(0);
+  }
 }
