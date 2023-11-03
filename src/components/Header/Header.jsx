@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import CartWidget from "../CartWidget/CartWidget";
 import useModal from "../hooks/useModal";
 import Cart from "../Cart/Cart";
+import {motion } from "framer-motion";
 
 import { Button } from "@chakra-ui/react";
 
@@ -26,7 +27,12 @@ const Header = (props) => {
     .map((cliente) => cliente.usuarios);
 
   return (
-    <div className="header">
+    <motion.div className="header"  
+    initial={{y: -50}}
+    animate={{y:0}}
+    transition={{duration:0.5}}
+    exit={{y:-50}}
+    >
       <div className="contenedor-usuario">
         <p>{usuario}</p>
 
@@ -47,7 +53,7 @@ const Header = (props) => {
         </Button>
         <Cart isOpen={isOpenModal} closeModal={closeModal} />
       </div>
-    </div>
+    </motion.div>
   );
 };
 

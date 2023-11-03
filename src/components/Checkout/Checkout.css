@@ -90,6 +90,17 @@
   padding-left: 1rem;
 }
 
+.contenedor-form form textarea {
+  width: 300px;
+  height: 100px;
+  margin-bottom: 1rem;
+  border: 1px solid var(--principal-color);
+  border-radius: 5px;
+  font-size: 1rem;
+  padding-left: 1rem;
+  padding-top: 1rem;
+}
+
 .contenedor-form form input:focus {
   outline: none;
 }

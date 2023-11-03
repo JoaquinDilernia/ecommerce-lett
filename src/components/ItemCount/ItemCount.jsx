@@ -11,7 +11,7 @@ import { AddIcon, MinusIcon } from "@chakra-ui/icons";
 import "./ItemCount.css";
 
 const ItemCount = ({ onAdd, id, precio }) => {
-  const [quanti, setQuanti] = useState(1);
+  const [quanti, setQuanti] = useState(0);
 
   const addQty = () => {
     setQuanti(quanti + 1);
@@ -24,7 +24,7 @@ const ItemCount = ({ onAdd, id, precio }) => {
   return (
     <div className="item_count_main">
       <ButtonGroup size="sm" isAttached variant="outline" color={"red"}>
-        {quanti <= 1 ? (
+        {quanti <= 0? (
           <Tooltip label="minimum stock reached" placement="bottom">
             <IconButton icon={<MinusIcon />} isDisabled />
           </Tooltip>
@@ -32,12 +32,25 @@ const ItemCount = ({ onAdd, id, precio }) => {
           <IconButton icon={<MinusIcon />} onClick={removeQty} />
         )}
         <Center>
-          <Button
-            onClick={() => onAdd(quanti, id, precio)}
-            className="btn_agregar"
-          >
-            Agregar al Carrito: {quanti}
-          </Button>
+
+          {quanti === 0 ? (
+       <p> agregar al carrito</p>
+            ) : (
+              <Button className="btn_agregar"
+                
+                variant="outline"
+                size="sm"
+                onClick={() => onAdd(id, quanti)}
+              >
+                agregar al carrito {quanti}
+              </Button>
+            )  
+          }
+
+
+
+
+       
         </Center>
 
         <IconButton icon={<AddIcon />} onClick={addQty} />

@@ -4,6 +4,7 @@ import { BsTrash3 } from "react-icons/bs";
 import { useState, useEffect } from "react";
 import "./Brief.css";
 import { Link, useParams } from "react-router-dom";
+import {motion} from "framer-motion";
 
 const Brief = () => {
   const url_cliente = "https://apimocha.com/lettproduct/clientes";
@@ -30,7 +31,13 @@ const Brief = () => {
 
   return (
     <>
-      <div className="contenedor">
+      <motion.div  className="contenedor"  
+      initial={{opacity:0}}
+      animate={{opacity:1}}
+      transition={{duration:0.5}}
+      exit={{opacity:0}}
+      >
+
         <div className="contenedor-productos">
           {cart.map((product) => (
             <div className="producto" key={product.id}>
@@ -78,7 +85,7 @@ const Brief = () => {
             <p className="monto">{parseInt(totalAmount)}</p>
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };

@@ -5,6 +5,8 @@ import { IconContext } from "react-icons/lib";
 import logo from "../../assets/logo.png";
 import "./NavBar.css";
 
+import {motion} from "framer-motion";
+
 const NavBar = (props) => {
   const [click, setClick] = useState(false);
 
@@ -16,14 +18,25 @@ const NavBar = (props) => {
   return (
     <>
       <IconContext.Provider value={{ color: "#324b77" }}>
-        <nav className="navbar">
+        <motion.nav className="navbar" 
+        initial={{y: -50}}
+        animate={{y:0}}
+        transition={{duration:0.5}}
+        exit={{y:-50}}
+
+        >
           <div className="navbar-container container">
             <Link
               to={`/Home/${idcliente}/0`}
               className="logo"
               onClick={closeMobileMenu}
             >
-              <img src={logo} alt="loco" />
+              <motion.img src={logo} alt="logo" 
+              initial={{x: -50}}
+              animate={{x:0}}
+              transition={{duration:0.5}}
+              
+              />
             </Link>
             <div className="menu-icon" onClick={handleClick}>
               {click ? <FaTimes /> : <FaBars />}
@@ -99,7 +112,7 @@ const NavBar = (props) => {
               </li>
             </ul>
           </div>
-        </nav>
+        </motion.nav>
       </IconContext.Provider>
     </>
   );

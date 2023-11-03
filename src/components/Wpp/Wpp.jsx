@@ -13,7 +13,7 @@ const Wpp = () => {
         transition={{ duration: 0.2 }}
         className="btn-wpp"
         target="blank"
-        href="https://api.whatsapp.com/send?phone=1161712268"
+        href="https://api.whatsapp.com/send?phone=1157057732"
       >
         
         <FaWhatsapp className="icon-wpp" />

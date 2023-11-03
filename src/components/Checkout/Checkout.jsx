@@ -74,6 +74,16 @@ const Checkout = () => {
     const dia = fecha.getDate();
     const mes = fecha.getMonth() + 1;
     const año = fecha.getFullYear();
+    //minutos con dos digitos
+    const minutos = fecha.getMinutes();
+    const minutos2 = ("0" + minutos).slice(-2);
+    //horas con dos digitos
+    const horas = fecha.getHours();
+    const horas2 = ("0" + horas).slice(-2);
+    const horecompeta = `${horas2}:${minutos2}`;
+
+
+
     const fechaActual = `${dia}/${mes}/${año}`;
 
     const order = {
@@ -87,6 +97,9 @@ const Checkout = () => {
       fechaActual,
       estado,
       idventa,
+      mes,
+      año,
+      horacompleta
     };
 
     console.log(order);
@@ -134,7 +147,7 @@ const Checkout = () => {
                 <input type="text" name="nombre" placeholder="Nombre" required />
                 <input type="text" name="apellido" placeholder="Apellido"  required/>
                 <input type="text" name="telefono" placeholder="Telefono" required />
-                <input
+                <textarea
                   type="text"
                   name="observacion"
                   placeholder="Observacion"

@@ -60,3 +60,11 @@
   -ms-transform: scale(1.03);
   -o-transform: scale(1.03);
 }
+
+@media screen and (max-width: 768px) {
+  .header {
+padding: 0 0.2rem;
+  }
+
+
+}

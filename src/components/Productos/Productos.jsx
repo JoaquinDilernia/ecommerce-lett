@@ -5,6 +5,8 @@ import ItemCount from "../ItemCount/ItemCount";
 import { CartContext } from "../../context/ShoppingCartContext";
 import "./Productos.css";
 
+import { motion } from "framer-motion";
+
 const Productos = (props) => {
   let precio = 0;
   const url = "https://apimocha.com/lettproduct/products";
@@ -90,16 +92,68 @@ const Productos = (props) => {
 
   return (
     <div className="home-contenedor">
-      <div className="home-contenedor__buscador">
+      <motion.div className="home-contenedor__buscador" 
+      initial={{y: -50}}
+      animate={{y:0}}
+      transition={{duration:0.5}}
+      exit={{y:-50}}
+      >
         <input
           type="text"
           placeholder="Buscar Producto"
           value={search}
           onChange={handleSearch}
         />
-      </div>
+      </motion.div>
 
       <div className="home-contenedor__productos">
+
+        {filteredProducts.length === 0 &&
+          products
+            .filter(
+              (product) =>
+                product.estado === 1 &&
+                product.categoria === parseInt(params.idcategoria)
+            )
+            .map((product) => (
+              <motion.div className="home-contenedor__productos__item" key={product.id}
+              initial={{y: 50}}
+              whileInView={{y:0}}
+              transition={{duration:0.5}}
+              >
+                <div className="home-contenedor__productos__item__header"></div>
+
+                <Link to={`/Productos/${idcliente}/${product.id}`}>
+                  <div className="home-contenedor__productos__item__img">
+                    <img src={product.image} alt={product.name} />
+                  </div>
+                  <h3>{product.nombre}</h3>
+                  {guardarprecio(
+                    product.comercio, 
+                    product.walmart,
+                    product.grandes,
+                    product.morph,
+                    product.prestigio
+                  )}
+                  {precio === 0 ? (
+                    <p className="precio"></p>
+                  ) : (
+                    <p className="precio">${precio}</p>
+                  )}
+
+                  <div className="home-contenedor__productos__item__footer">
+                    <p> UxB: {product.uxb}</p>
+                    <p> UxV: {product.uxv}</p>
+                  </div>
+                 
+                </Link>
+                {idcliente === "0" ? (
+                  <p></p>
+                ) : (
+                  <ItemCount onAdd={onAdd} id={product.id} precio={precio} />
+                )}
+              </motion.div>
+            ))}
         {filteredProducts
           .filter(
             (product) =>
@@ -107,7 +161,11 @@ const Productos = (props) => {
               product.categoria === parseInt(params.idcategoria)
           )
           .map((product) => (
-            <div className="home-contenedor__productos__item" key={product.id}>
+            <motion.div className="home-contenedor__productos__item" key={product.id} 
+             initial={{y: 50}}
+             whileInView={{y:0}}
+              transition={{duration:0.5}}
+            >
               <div className="home-contenedor__productos__item__header"></div>
 
               <Link to={`/Productos/${idcliente}/${product.id}`}>
@@ -132,14 +190,14 @@ const Productos = (props) => {
                   <p> UxB: {product.uxb}</p>
                   <p> UxV: {product.uxv}</p>
                 </div>
-                <div></div>
+               
               </Link>
               {idcliente === "0" ? (
                 <p></p>
               ) : (
                 <ItemCount onAdd={onAdd} id={product.id} precio={precio} />
               )}
-            </div>
+            </motion.div>
           ))}
       </div>
       {error && <p className="error">Producto no encontrado</p>}
