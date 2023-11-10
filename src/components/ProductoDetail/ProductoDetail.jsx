@@ -78,7 +78,7 @@ const ProductoDetail = () => {
                   <p className="detail-p"></p>
                 ) : (
                   <div className="Producto-detail-contenedor-boton">
-                    <ItemCount onAdd={onAdd} id={product.id} precio={precio} />
+                    <ItemCount onAdd={onAdd} id={product.id} precio={parseInt(precio)} />
                   </div>
                 )}
               </div>

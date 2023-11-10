@@ -33,24 +33,19 @@ const ItemCount = ({ onAdd, id, precio }) => {
         )}
         <Center>
 
-          {quanti === 0 ? (
-       <p> agregar al carrito</p>
-            ) : (
-              <Button className="btn_agregar"
-                
-                variant="outline"
-                size="sm"
-                onClick={() => onAdd(id, quanti)}
-              >
-                agregar al carrito {quanti}
-              </Button>
-            )  
-          }
+          {quanti <= 0 ? (
+            <p>
+              Agregar al Carrito: {quanti}
+            </p>
+          ) : (
+            <Button
+              onClick={() => onAdd(quanti, id, precio)}
+              className="btn_agregar"
+            >
+              Agregar al Carrito: {quanti}
+            </Button>
+          ) }
 
-
-
-
-       
         </Center>
 
         <IconButton icon={<AddIcon />} onClick={addQty} />
