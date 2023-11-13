@@ -99,6 +99,7 @@
   color: var(--principal-color);
   justify-content: space-around;
   width: 100%;
+  border-bottom: 1px solid var(--principal-color);
 }
 
 .home-contenedor__productos__item__footer p{

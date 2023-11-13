@@ -34,7 +34,7 @@ const ItemCount = ({ onAdd, id, precio }) => {
         <Center>
 
           {quanti <= 0 ? (
-            <p>
+            <p className="agregar-p">
               Agregar al Carrito: {quanti}
             </p>
           ) : (
